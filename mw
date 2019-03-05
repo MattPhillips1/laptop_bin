@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo mount -t "ntfs" -o "ro,uhelper=udisks2,nodev,nosuid,uid=1000,gid=1000" "/dev/sda5" "/media/matthew/OS"

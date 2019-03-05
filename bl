@@ -1,0 +1,13 @@
+#!/bin/bash
+
+file=`ls *.tex`
+file=${file%.*}
+if [ -f $file.bib ]; then
+	bibtex $file
+fi
+
+if pdflatex -synctex=1 -interaction=nonstopmode $file.tex |  egrep 'LaTeX Error'; then
+	exit 1
+else
+	exit 0
+fi

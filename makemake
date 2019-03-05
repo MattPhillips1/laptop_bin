@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ ! -f Makefile ]; then
+	echo "CC=g++
+Cflags=-std=c++14 -Wall -Werror -Wpedantic -pthread -fsanitize=address -O2
+
+all: $1
+
+$1: $1.o
+	\$(CC) \$(Cflags) $1.o -o $1
+
+$1.o: $1.cpp
+	\$(CC) \$(Cflags) -c $1.cpp
+
+
+clean:
+	rm *.o $1" > Makefile
+	echo "Makefile created";
+else
+	echo "Makefile exists already";
+fi

@@ -1,0 +1,10 @@
+#!/bin/bash
+ping google.com 2> /dev/null
+r=$?
+while [ $r != 0 ]
+do
+	ping google.com 2> /dev/null
+	r=$?
+	echo -n .
+	sleep 3
+done

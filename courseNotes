@@ -1,0 +1,25 @@
+#!/bin/sh
+course=""
+if [ "$1" = "35" ]
+then
+	course="MATH350"
+elif [ "$1" = "4" ]
+then
+	course="MATH417"
+elif [ "$1" = "P" ]
+then
+	course="PHYS214"
+elif [ "$1" = "33" ]
+then
+	course="MATH338"
+fi
+cd ~/Documents/FourthYear/$course/Notes
+if [ ! -f $course.tex ]; then
+	cp "~/Latex/Templates/dan.tex" $course.tex
+fi
+if [ ! -d "Pictures" ]; then
+	mkdir Pictures
+fi
+touch $course.pdf
+okular $course.pdf > /dev/null 2> /dev/null &
+nvim $course.tex

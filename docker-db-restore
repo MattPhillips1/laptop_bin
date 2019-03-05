@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ $# < 3 ]]; then
+	echo 'Usage: docker-db-restore {$dbdump} {$docker-container} {$db}'
+	exit 1
+fi
+
+cat "$1" | docker exec -i "$2" /usr/bin/mysql "$3"

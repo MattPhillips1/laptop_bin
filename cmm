@@ -1,0 +1,8 @@
+#!/bin/bash
+branch=`git symbolic-ref HEAD 2>/dev/null`;
+branch=${branch##refs/heads/};
+
+git checkout master;
+gpl;
+git checkout $branch;
+git merge master;
