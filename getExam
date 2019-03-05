@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sshpass -p 'l0ck-1t' scp -r cs1531exam@cse.unsw.edu.au:~/work/18s1final/$1 .
+sshpass -p '' scp -r cs1531exam@cse.unsw.edu.au:~/work/18s1final/$1 .
